@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="New York">
+  <meta name="keywords" content="New York, historie, kultura, památky, USA">
+  <meta name="author" content="Eliška Hochmuthová, Viktorka Handlovská">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New York - Obrázky a informace</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset a základní nastavení */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #1a1a1a;
+      color: #e0e0e0;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    /* Záhlaví a navigace */
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      color: #FFD700; /* zlatá barva */
+    }
+    header nav {
+      margin-top: 10px;
+    }
+    header nav a {
+      text-decoration: none;
+      color: #FF8C00; /* tmavě oranžová */
+      margin: 0 10px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    header nav a:hover {
+      color: #FFD700;
+    }
+    /* Kontejner s maximální šířkou */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    /* Sekce s obsahem */
+    section {
+      margin-bottom: 40px;
+      padding: 20px;
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #FF8C00;
+      font-size: 2em;
+    }
+    section h3 {
+      margin-top: 20px;
+      color: #7FFF00; /* světlá zelená */
+      font-size: 1.5em;
+    }
+    ul {
+      list-style-type: circle;
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    li {
+      margin: 8px 0;
+    }
+    /* Styling iframe (mapa) */
+    iframe {
+      display: block;
+      margin: 20px auto;
+      border: none;
+    }
+    /* Obrázky - centrované, s efektem při hoveru */
+    .img-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .img-container img {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px;
+      border: 3px solid #444;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+    }
+    /* Nové pravidlo pro menší obrázky */
+    .img-container img.small {
+      max-width: 200px;
+    }
+    .img-container img:hover {
+      transform: scale(1.05);
+    }
+    /* Pro širší obrazovky zobrazíme obrázky ve flexboxu */
+    @media (min-width: 600px) {
+      .img-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .img-container img {
+        width: calc(50% - 20px);
+        max-width: none;
+      }
+      /* Upravíme menší obrázky, aby si jejich maximální šířka zůstala */
+      .img-container img.small {
+        width: auto;
+        max-width: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>New York</h1>
+    <nav>
+      <a href="#zakladni">Základní informace</a>
+      <a href="#historie">Historie</a>
+      <a href="#geografie">Geografie</a>
+      <a href="#mestske-casti">Městské části</a>
+      <a href="#pamatky">Památky</a>
+      <a href="#media">Média</a>
+      <a href="#kriminalita">Kriminalita</a>
+      <a href="#zajimavosti">Zajímavosti</a>
+    </nav>
+  </header>
+ 
+  <div class="container">
+    <section id="zakladni">
+      <h2>Základní informace</h2>
+      <ul>
+        <li>Celý název je New York City</li>
+        <li>Nachází se v USA</li>
+        <li>Je nejlidnatější město Spojených států amerických, žije tam více než 8 milionů obyvatel</li>
+        <li>Je považován za hlavní město kultury, obchodu, módy, umění a nákupů – nejen v USA</li>
+        <li>Nachází se zde sídlo OSN</li>
+      </ul>
+    </section>
+
+    <section id="historie">
+      <h2>Historie</h2>
+      <ul>
+        <li>Město bylo založeno Nizozemci v roce 1625</li>
+        <li>Původní název byl Nový Amsterdam</li>
+        <li>V roce 1664 se město dostalo do ruky Angličanům</li>
+        <li>V letech 1785–1790 byl New York hlavním městem Spojených států</li>
+        <li>Od roku 1790 je největším městem USA</li>
+        <li>Roku 1898 byl sloučen do dnešní podoby a rozdělen na pět městských částí</li>
+        <li><a href="https://www.youtube.com/watch?v=s5V2QfOuze0" target="_blank">Vývoj New Yorku</a></li>
+      </ul>
+    </section>
+
+    <section id="geografie">
+      <h2>Geografie</h2>
+      <ul>
+        <li>Nachází se na severovýchodě Spojených států</li>
+        <li>
+          Je rozdělen na pět městských částí:
+          <ul>
+            <li>The Bronx – jediná městská část, která neleží na ostrově</li>
+            <li>Brooklyn – nejlidnatější</li>
+            <li>Queens – nejrozlehlejší</li>
+            <li>Manhattan – nejhustěji osídlený</li>
+            <li>Staten Island – nejzelenější</li>
+          </ul>
+        </li>
+        <li>Nejvyšším bodem města je Todt Hill (125 m)</li>
+      </ul>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193571.43838511315!2d-74.1180861!3d40.7058254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20USA!5e0!3m2!1scs!2scz!4v1716376883460!5m2!1scs!2scz"
+        width="400"
+        height="300"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </section>
+
+    <section id="mestske-casti">
+      <h2>Městské části</h2>
+      <ul>
+        <li>
+          New York je tvořen 5 městskými částmi:
+          <ul>
+            <li>The Bronx</li>
+            <li>Brooklyn</li>
+            <li>Manhattan</li>
+            <li>Queens</li>
+            <li>Staten Island</li>
+          </ul>
+        </li>
+        <li>Dále se tyto části dělí na několik desítek až stovek čtvrtí</li>
+      </ul>
+      <p class="img-container">
+        <img src="městské části.jpg" alt="Městské části">
+      </p>
+      <h3>Manhattan</h3>
+      <ul>
+        <li>Nachází se zde většina mrakodrapů a také Central Park</li>
+        <li>Manhattan je kulturním a finančním centrem nejen města, ale i celého světa</li>
+        <li>Celý ostrov pokrývá systém ulic ve tvaru mřížky zavedený roku 1811</li>
+      </ul>
+      <h3>Brooklyn</h3>
+      <ul>
+        <li>Nejlidnatější část New Yorku</li>
+        <li>Do roku 1898 byl Brooklyn samostatným městem</li>
+        <li>Brooklynu náleží Coney Island založený v 70. letech 19. století</li>
+      </ul>
+      <h3>Queens</h3>
+      <ul>
+        <li>Původně se zde nalézalo několik malých měst a vesnic založených Nizozemci</li>
+        <li>Nachází se zde Shea Stadium, domovský stadion New York Mets</li>
+        <li>Nacházejí se zde dvě největší letiště: Kennedyho a LaGuardiovo</li>
+      </ul>
+      <h3>The Bronx</h3>
+      <ul>
+        <li>Nejsevernější část New Yorku</li>
+        <li>Nachází se zde stadion týmu New York Yankees</li>
+        <li>Bronx Zoo – největší zoo v New Yorku</li>
+      </ul>
+      <h3>Staten Island</h3>
+      <ul>
+        <li>Má nejvýrazněji předměstský charakter ze všech městských částí</li>
+        <li>Nachází se zde jeden z posledních nedotčených lesů ve městě</li>
+        <li>Tyto lesy jsou od roku 1984 začleněny do systému ochrany přírody</li>
+      </ul>
+    </section>
+
+    <section id="pamatky">
+      <h2>Památky</h2>
+      <ul>
+        <li>V New Yorku můžeme najít mnoho různých památek</li>
+        <li>Pro New York jsou typické mrakodrapy</li>
+        <li>
+          Mezi nejznámější patří:
+          <ul>
+            <li>Rockefeller Center</li>
+            <li>Socha Svobody</li>
+            <li>Empire State Building</li>
+            <li>Central Park</li>
+            <li>Times Square</li>
+          </ul>
+        </li>
+      </ul>
+     
+      <h3>Rockefeller Center</h3>
+      <ul>
+        <li>Komplex 19 obchodních budov</li>
+        <li>V roce 1987 byl vyhlášen Národní historickou památkou</li>
+        <li>Začátek budování sahá až do roku 1928</li>
+      </ul>
+      <p class="img-container">
+        <img class="small" src="Rockefeller Center.jpg" alt="Rockefeller Center">
+      </p>
+     
+      <h3>Socha Svobody</h3>
+      <ul>
+        <li>Nachází se na Liberty Island</li>
+        <li>Byl to dar od Francie</li>
+        <li>Socha představuje římskou bohyni svobody Libertas</li>
+        <li>Je symbolem nezávislosti a zrušení otroctví</li>
+      </ul>
+      <p class="img-container">
+        <img class="small" src="Socha Svobody.jpg" alt="Socha Svobody">
+      </p>
+     
+      <h3>Empire State Building</h3>
+      <ul>
+        <li>Od roku 1931 byla 40 let nejvyšší budovou světa</li>
+        <li>V roce 1986 byla zařazena na seznam národních kulturních památek</li>
+        <li>Nachází se tam 1 860 schodů</li>
+      </ul>
+      <p class="img-container">
+        <img src="Empire State Building.jpg" alt="Empire State Building">
+      </p>
+     
+      <h3>Central Park</h3>
+      <ul>
+        <li>Byl založen roku 1857</li>
+        <li>Národní historickou památkou se stal roku 1963</li>
+        <li>Řadí se mezi nejznámější městské parky světa</li>
+      </ul>
+      <p class="img-container">
+        <img src="central park.jpg" alt="Central Park">
+      </p>
+     
+      <h3>Times Square</h3>
+      <ul>
+        <li>Rozsáhlá oblast křižovatky mezi Broadwayí a 7th Avenue</li>
+        <li>Nachází se tam velké množství firem a obchodů</li>
+        <li>Považuje se za symbol New Yorku a světovou památku</li>
+      </ul>
+      <p class="img-container">
+        <img src="Times square.jpg" alt="Times Square">
+      </p>
+    </section>
+
+    <section id="media">
+      <h2>Média</h2>
+      <ul>
+        <li>New York je světovou metropolí televize, reklamy, hudby a novinových i knižních nakladatelství</li>
+        <li>Je největším mediálním trhem v Severní Americe</li>
+        <li>Dvě ze tří celostátních novin mají redakci v New Yorku – The New York Times, The Wall Street Journal</li>
+        <li>New York je centrem televizní tvorby</li>
+      </ul>
+    </section>
+
+    <section id="kriminalita">
+      <h2>Kriminalita</h2>
+      <ul>
+        <li>
+          Extrémně vysoká úroveň kriminality v 80. letech a na začátku 90. let:
+          <ul>
+            <li>Probíhala zde epidemie užívání drogy crack</li>
+          </ul>
+        </li>
+        <li>Od poloviny 90. let kriminalita postupně klesala</li>
+        <li>Od roku 2005 je New York nejbezpečnějším z 25 největších amerických měst</li>
+        <li>Sociologové a kriminologové se ohledně příčin dramatického poklesu kriminality neshodují</li>
+        <li>Jedním z názorů je, že příčinou je konec epidemie cracku nebo příznivě působící demografické změny</li>
+        <li>Působilo zde několik známých skupin organizovaného zločinu, např. Forty thieves</li>
+      </ul>
+    </section>
+
+    <section id="zajimavosti">
+      <h2>Zajímavosti</h2>
+      <ul>
+        <li>New York byl dříve hlavním městem USA</li>
+        <li>Je jazykově nejrozmanitější město na světě – více než 8,000 jazyků</li>
+        <li>Ikonickým znakem města jsou žluté taxíky, které se zde objevily už v roce 1912; žlutá barva byla zvolena pro co nejlepší viditelnost</li>
+        <li>Newyorské metro je jedním z největších na světě a má 472 stanic</li>
+        <li>Většina obyvatel zde nevlastní auto a spoléhá se na MHD, taxi a chůzi</li>
+        <li>New York má vlastní dialekt – například coffee se vyslovuje "caw-fee"</li>
+      </ul>
+      <p class="img-container">
+        <img src="new york západ.jpg" alt="New York západ">
+        <img src="new york 2.jpg" alt="New York 2">
+      </p>
+    </section>
+  </div>
+</body>
+</html>
